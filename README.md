@@ -1,11 +1,11 @@
 # __hexdata_websocket_cpp__
 
 Very simple client/server websocket application that communicates straight with raw data (hex bytes).
-Libraries used are taken from [Simple-WebSocket-Server](https://github.com/eidheim/Simple-Web-Server) so refer to that for complete library documentation.
+Libraries used are taken from [Simple-WebSocket-Server](https://github.com/eidheim/Simple-WebSocket-Server) so refer to that for complete library documentation.
 
 ### Dependencies
 * Boost.Asio or standalone Asio
-* Included [Simple-WebSocket-Server](https://github.com/eidheim/Simple-Web-Server) headers
+* Included [Simple-WebSocket-Server](https://github.com/eidheim/Simple-WebSocket-Server) headers
 
 ### Compile
 Compile with a C++11 supported compiler:
