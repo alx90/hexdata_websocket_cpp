@@ -13,6 +13,8 @@ using WsClient = SimpleWeb::SocketClient<SimpleWeb::WS>;
 const char CMD_VERSION_INFO[] = { '\xAA', '\x00', '\x01', '\x00', '\x00', '\x55' };
 const char CMD_AMP_ON[] = { '\xAA', '\x00', '\x06', '\x00', '\x01', '\x55' };
 const char CMD_AMP_OFF[] = { '\xAA', '\x00', '\x06', '\x00', '\x00', '\x55' };
+const char CMD_TEMP_INQUIRY[] = { '\xAA', '\x00', '\x04', '\x00', '\x04', '\x55' };
+const char CMD_WARN_INQUIRY[] = { '\xAA', '\x00', '\x03', '\x00', '\x00', '\x55' };
 char CMD_TO_SEND[6];
 
 const char RES_VERSION_INFO[] = { '\xBB', '\x00', '\x01', '\x00', '\x66', '\x55'};
@@ -86,6 +88,10 @@ int main(int argc, char* argv[]) {
     memcpy(CMD_TO_SEND, CMD_AMP_ON, sizeof(CMD_TO_SEND));
   } else if ( argc>1 && std::string(argv[1])=="off" ) {
     memcpy(CMD_TO_SEND, CMD_AMP_OFF, sizeof(CMD_TO_SEND));
+  } else if ( argc>1 && std::string(argv[1])=="temp" ) {
+    memcpy(CMD_TO_SEND, CMD_TEMP_INQUIRY, sizeof(CMD_TO_SEND));
+  } else if ( argc>1 && std::string(argv[1])=="warn" ) {
+    memcpy(CMD_TO_SEND, CMD_WARN_INQUIRY, sizeof(CMD_TO_SEND));
   } else {
     memcpy(CMD_TO_SEND, CMD_VERSION_INFO, sizeof(CMD_TO_SEND));
   }
